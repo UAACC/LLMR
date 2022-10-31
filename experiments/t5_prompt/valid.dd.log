@@ -1,0 +1,7 @@
+/project/def-lilimou/ychao/data/dialogue/cleaned_dd/single-turn
+dialog response of [SRC] is:/project/def-lilimou/ychao/data/dialogue/cleaned_dd/single-turn
+[SRC]BLEU [12.165877219296801, 4.582970080569282, 2.189371675851666, 1.0998077718386376]
+iBLEU [5.00179913981802, -1.579013934153948, -3.5338913730248875, -4.3271190154664545]
+distinct [6.249390065384991, 32.98892358739143]
+length-gen 81976
+length-ref 98366

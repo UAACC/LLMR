@@ -1,0 +1,6 @@
+"[SRC]". Said the first person.
+Generate the response of "[SRC]".
+[SRC] The Response:
+What is the answer to "[SRC]"
+if one says "[SRC]",the response is:
+Respond to "[SRC]"
