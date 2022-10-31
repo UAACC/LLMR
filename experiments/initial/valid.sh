@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=10:00:00
-#SBATCH --job-name=valid
+#SBATCH --job-name=valid_T5_xxx
 #SBATCH --account=rrg-lilimou
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=6
