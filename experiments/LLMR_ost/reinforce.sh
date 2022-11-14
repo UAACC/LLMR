@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=72:00:00
-#SBATCH --job-name=train
+#SBATCH --job-name=train_ost
 #SBATCH --account=rrg-lilimou
 #SBATCH --nodes=1
 #SBATCH --exclusive
@@ -25,18 +25,18 @@ export NCCL_DEBUG=WARN
 
 export HF_HOME='/project/def-lilimou/ychao/hf'
 
-NAME=t5t0pce_rl
+NAME=t5t0pce_rl_ost
 
-LLMR=/home/mrli/scratch/projects/LLMR/ckpts/t5_base_ce+t0_prompt/t5b-t0p-dd/model-004k
+LLMR=/home/mrli/scratch/projects/LLMR/ckpts/t5b-t0p-ost/model-004k
 t5_base=/project/def-lilimou/ychao/hf/hub/t5-base
 REWARD_MODEL_NAME=t0-3b
 WS=/project/def-lilimou/ychao
 
 
-DATA=$WS/data/dialogue/cleaned_dd/single-turn
+DATA=$WS/data/dialogue/cleaned_ost/single-turn
 CONFIG=$HF_HOME/hub/t5-base/config.json
 TOKENIZER=$HF_HOME/hub/t5-base
-SAVE=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_12
+SAVE=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_ost
 
 
 mkdir -p $SAVE

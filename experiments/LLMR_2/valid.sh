@@ -21,7 +21,7 @@ model=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_12
 src=src
 tgt=tgt
 
-for ckpt in `ls $model`
+for ckpt in `ls -r $model`
 do
 op=$model/$ckpt/valid.tgt
 python decoding.py --max-length-a 3 --max-sentences 64 --do-sample --top-k 1 -i $dataset/valid.src -mn $model/$ckpt -o $op

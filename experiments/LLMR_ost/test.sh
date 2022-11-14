@@ -15,13 +15,13 @@ module load python/3.7
 
 
 
-data=dd
+data=ost
 dataset=/project/def-lilimou/ychao/data/dialogue/cleaned_${data}/single-turn
-model=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_12
+model=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_ost
 src=src
 tgt=tgt
 
-ckpt='model-001k'
+ckpt='model-006k'
 op=$model/$ckpt/test.tgt
 python decoding.py --max-length-a 3 --max-sentences 64 --do-sample --top-k 1 -i $dataset/test.src -mn $model/$ckpt -o $op
 echo $ckpt $dataset >> $model/test.$data.log

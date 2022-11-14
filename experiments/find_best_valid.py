@@ -1,8 +1,8 @@
 import re
 
-valid_log = r'/home/mrli/scratch/projects/LLMR/ckpts/t5_base_ce+t0_prompt/t5b-t0p-dd/valid.dd.log'
+valid_log = r'/home/mrli/scratch/projects/LLMR/ckpts/t5b-t0p-ost/valid.ost.log'
 
-loc = r'/home/mrli/scratch/projects/LLMR/ckpts/t5_base_ce+t0_prompt/t5b-t0p-dd/result.txt'
+loc = r'/home/mrli/scratch/projects/LLMR/ckpts/t5b-t0p-ost/results.txt'
 
 
 with open(valid_log) as f:

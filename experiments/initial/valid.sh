@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=10:00:00
+#SBATCH --time=4:00:00
 #SBATCH --job-name=valid_T5_xxx
 #SBATCH --account=rrg-lilimou
 #SBATCH --nodes=1
@@ -21,11 +21,11 @@ model=/home/mrli/scratch/projects/LLMR/ckpts/t5b-t0p-ost
 src=src
 tgt=tgt
 
-for ckpt in `ls $model`
+for ckpt in `ls -r $model`
 do
-op=$model/$ckpt/valid.tgt
-python decoding.py --max-length-a 3 --max-sentences 64 --do-sample --top-k 1 -i $dataset/valid.src -mn $model/$ckpt -o $op
-echo $ckpt $dataset >> $model/valid.$data.log
-python metrics.py --lowercase --gen $op --ref $dataset/valid.$tgt --src $dataset/valid.$src >> $model/valid.$data.log
+    op=$model/$ckpt/valid.tgt
+    python decoding.py --max-length-a 3 --max-sentences 64 --do-sample --top-k 1 -i $dataset/valid.src -mn $model/$ckpt -o $op
+    echo $ckpt $dataset >> $model/valid.$data.log
+    python metrics.py --lowercase --gen $op --ref $dataset/valid.$tgt --src $dataset/valid.$src >> $model/valid.$data.log
 done
   

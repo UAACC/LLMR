@@ -15,9 +15,9 @@ module load python/3.7
 
 
 
-data=dd
+data=ost
 dataset=/project/def-lilimou/ychao/data/dialogue/cleaned_${data}/single-turn
-model=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_12
+model=/home/mrli/scratch/projects/LLMR/ckpts/LLMR_ost
 src=src
 tgt=tgt
 

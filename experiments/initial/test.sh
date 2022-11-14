@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=00:30:00
-#SBATCH --job-name=test
+#SBATCH --job-name=test_T5_ost
 #SBATCH --account=rrg-lilimou
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=6
@@ -15,9 +15,9 @@ module load python/3.7
 
 
 
-data=dd
+data=ost
 dataset=/project/def-lilimou/ychao/data/dialogue/cleaned_${data}/single-turn
-model=/home/mrli/scratch/projects/LLMR/ckpts/t5_base_ce+t0_prompt/t5b-t0p-dd
+model=/home/mrli/scratch/projects/LLMR/ckpts/t5b-t0p-ost
 src=src
 tgt=tgt
 
