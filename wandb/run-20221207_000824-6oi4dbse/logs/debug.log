@@ -1,0 +1,34 @@
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_setup.py:_flush():68] Configure stats pid to 2835267
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_setup.py:_flush():68] Loading settings from /home/dongheng/.config/wandb/settings
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_setup.py:_flush():68] Loading settings from /home/dongheng/LLMR/wandb/settings
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'plot.py', 'program': 'plot.py'}
+2022-12-07 00:08:24,871 INFO    MainThread:2835267 [wandb_init.py:_log_setup():476] Logging user logs to /home/dongheng/LLMR/wandb/run-20221207_000824-6oi4dbse/logs/debug.log
+2022-12-07 00:08:24,872 INFO    MainThread:2835267 [wandb_init.py:_log_setup():477] Logging internal logs to /home/dongheng/LLMR/wandb/run-20221207_000824-6oi4dbse/logs/debug-internal.log
+2022-12-07 00:08:24,872 INFO    MainThread:2835267 [wandb_init.py:init():516] calling init triggers
+2022-12-07 00:08:24,872 INFO    MainThread:2835267 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2022-12-07 00:08:24,872 INFO    MainThread:2835267 [wandb_init.py:init():569] starting backend
+2022-12-07 00:08:24,873 INFO    MainThread:2835267 [wandb_init.py:init():573] setting up manager
+2022-12-07 00:08:24,881 INFO    MainThread:2835267 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-12-07 00:08:24,887 INFO    MainThread:2835267 [wandb_init.py:init():580] backend started and connected
+2022-12-07 00:08:24,893 INFO    MainThread:2835267 [wandb_init.py:init():658] updated telemetry
+2022-12-07 00:08:24,902 INFO    MainThread:2835267 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2022-12-07 00:08:27,958 WARNING MsgRouterThr:2835267 [router.py:message_loop():77] message_loop has been closed
+2022-12-07 00:08:29,704 WARNING MainThread:2835267 [wandb_init.py:init():1099] interrupted
+Traceback (most recent call last):
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 1078, in init
+    run = wi.init()
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 698, in init
+    timeout=self.settings.init_timeout, on_progress=self._on_progress_init
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/site-packages/wandb/sdk/lib/mailbox.py", line 261, in wait
+    found = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/site-packages/wandb/sdk/lib/mailbox.py", line 118, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/site-packages/wandb/sdk/lib/mailbox.py", line 114, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/threading.py", line 552, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/dongheng/.conda/envs/LLMR/lib/python3.7/threading.py", line 300, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

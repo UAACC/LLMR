@@ -169,6 +169,7 @@ def actor_proc(queue, model, reward_model, handler, dataset, args, world_size, l
                                     output_attentions=config.output_attentions)
                     
                     logits = outputs.logits[:, -1, :] / args.temperature # (beam, vocab)
+                    
 
                     def top_k_mask_out(t, k, flat=False):
                         _list = torch.topk(t, k, -1)[0]

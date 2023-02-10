@@ -12,9 +12,10 @@ parser.add_argument('-bs', '--beam-size', type=int, default=4)
 parser.add_argument('-mn', '--model-name', required=True)
 parser.add_argument('-lp', '--length-penalty', default=1.0, type=float)
 parser.add_argument('-tn', '--tokenizer-name')
-parser.add_argument('--max-sentences', type=int, default=16)
+#max sentences are the batch of the inference
+parser.add_argument('--max-sentences', type=int, default=1)
 parser.add_argument('--temperature', type=float, default=1.0)
-parser.add_argument('--do-sample', action='store_true')
+parser.add_argument('--do-sample', default=False)
 parser.add_argument('--top-k', type=int)
 parser.add_argument('--top-p', type=float)
 parser.add_argument('--max-length-a', type=float, default=1.5)
@@ -52,7 +53,9 @@ if __name__ == "__main__":
                 lines.append(line.strip())
                 bar.update()
             
+            
             inputs = tokenizer(handler.process(lines)[0], return_tensors='pt', padding=True)
+            
             input_ids = inputs['input_ids'].to(device)
             if getattr(model.config, 'n_positions', None):
                 max_length = model.config.n_positions
@@ -67,14 +70,11 @@ if __name__ == "__main__":
 
             outputs = model.generate(
                 input_ids,
-                do_sample=args.do_sample,
                 num_beams=args.beam_size,
                 num_return_sequences=1,
-                no_repeat_ngram_size=2,
                 max_length=max_length,
+                early_stopping=True,
                 temperature=args.temperature,
-                top_k=args.top_k,
-                top_p=args.top_p,
                 length_penalty=args.length_penalty
             )
 
